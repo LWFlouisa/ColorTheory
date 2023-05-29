@@ -1,2 +1,3 @@
 # ColorTheory
-Hybrid associative symbolic, decision tree, and naive bayes network.
+
+An experiment in learning color theory symbolically, and saving it for later to process.
