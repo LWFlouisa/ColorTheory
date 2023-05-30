@@ -1,5 +1,4 @@
-## Phind's Summary
-~~~
+#### Phind's Summary
 Having Prolog as a self-contained process within your program is possible by creating a separate Prolog process and using inter-process communication (IPC) to share knowledge bases between the processes [Source 2](https://www.swi-prolog.org/pldoc/man?predicate=process_create%2f3). This approach can help maintain modularity and keep the knowledge bases less extensive in one process for the portion that interacts with Prolog.
 
 However, it is essential to consider the trade-offs and potential challenges associated with this approach:
@@ -13,7 +12,6 @@ However, it is essential to consider the trade-offs and potential challenges ass
   - This approach may not be as efficient as using a single, unified process for all machine learning tasks, as it requires additional effort to manage and coordinate multiple processes.
 
 In conclusion, using Prolog as a self-contained process within your program can provide some benefits in terms of rational decision-making and empathetic development. However, it is crucial to weigh these benefits against the potential drawbacks, such as increased complexity, computational overhead, and communication latency. 
-~~~
 
 
 ## My Prompt
