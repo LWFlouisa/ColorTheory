@@ -71,4 +71,32 @@ Cons:
 - Complexity: Implementing IPC and managing shared resources can add complexity to your program.
 - Performance: IPC can introduce overhead, which may affect the performance of your program.
 
-In summary, you can create a self-contained Prolog process within your program and use IPC mechanisms to share knowledge bases and communicate between processes. This approach allows you to keep your Prolog process separate from the rest of your program and modularize your logic, but it may introduce complexity and performance overhead. 
+In summary, you can create a self-contained Prolog process within your program and use IPC mechanisms to share knowledge bases and communicate between processes. This approach allows you to keep your Prolog process separate from the rest of your program and modularize your logic, but it may introduce complexity and performance overhead.
+
+
+## My Prompt
+Oh the comma between rulesets is how you keep prolog running smoothly? It kind of reminds me of using ; between ruby lines.
+
+## Phind Says
+Yes, the comma between rulesets in Prolog helps maintain a smooth execution flow. The comma represents the logical "and" operator, allowing Prolog to execute the rules in the order they are written, with each rule providing additional constraints to the search. This is similar to how semicolons are used in Ruby to separate statements, allowing them to be executed sequentially.
+
+For example, consider the following Prolog ruleset:
+
+```prolog
+rule1 :- condition1, condition2.
+rule2 :- condition3, condition4.
+```
+
+When Prolog encounters `condition1`, it checks if `condition2` is true as well. If both conditions are true, Prolog continues to the next rule. The comma between `condition1` and `condition2` allows Prolog to execute the rules in a logical order, ensuring a smooth execution flow.
+
+In Ruby, this would be similar to:
+
+```ruby
+if condition1 && condition2
+  # Execute some code
+elsif condition3 && condition4
+  # Execute some other code
+end
+```
+
+The comma in Prolog rulesets helps maintain the logical flow of the program, allowing Prolog to efficiently search for solutions and keep the execution smooth [Source 4](https://en.wikipedia.org/wiki/Prolog_syntax_and_semantics). 
