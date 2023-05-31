@@ -1,34 +1,50 @@
 # ColorTheory
 An experiment in learning color theory symbolically, and saving it for later to process.
 
-## Example Symbol
-~~~
-likes(john, jane).
-vegatable(eggplant, nightshade).
+## Knowledge Base
+~~~prolog
+:- discontiguous purecolor/3.
+:- discontiguous colortint/2.
+
+% basic tint, tone, shade
+tint(white, puretint).
+tone(grey,  puretone).
+shade(black, pureshade).
+
+% basic red, green, blue
+red(red,   purecolor).
+green(green, purecolor).
+blue(blue,  purecolor).
+
+% basic tinted versions of colors
+colortint(lightred, colortint).
+colortint(lightgreen, colortint).
+colortint(lightblue, colortint).
+
+% basic toned versions of colors
+colortone(midred, colortone).
+colortone(midgreen, colortone).
+colortint(midblue, colortone).
+
+% basic shaded versions of colors
+colorshade(darkred, colorshade).
+colorshade(darkgreen, colorshade).
+colorshade(darkblue, colorshade).
 ~~~
 
-## Pseudocode
-~~~
-## Specific Rulesets
-#  white is a pure tint.
-#  tint is a mixture of a color with white.
-#  tone is a mixture of a color with grey.
-#  shade is a mixture of a color with black.
-#  black is a pure shade.
-#  a purecolor is a wavelength not mixed with any tone, shade, or tint.
+## Consult Color
+~~~prolog
+:- initialization tint, tone, shade.
 
-# wavelength(white,        puretint).
-# wavelength(grey,         puretone).
-# wavelength(black,       pureshade).
-# wavelength(dark grey,       shade).
-# wavelength(light grey,       tint).
-# wavelength(red,         purecolor).
-# wavelength(blue,        purecolor).
-# wavelength(green,       purecolor).
-# wavelength(lightred,    colortint).
-# wavelength(lightblue,   colortint).
-# wavelength(lightgreen,  colortint).
-# wavelength(darkred,    colorshade).
-# wavelength(darkblue,   colorshade).
-# wavelength(darkgreen,  colorshade).
+tint :-
+    consult("_data/knowledgebase/colortheory.pl"), 
+    X = tint(white, puretint), write("The result of "), write(X), write(" holds.\n"). % consults the stories prolog file.
+
+tone :-
+    consult("_data/knowledgebase/colortheory.pl"),
+    Y = tone(grey,  puretone), write("The result of "), write(Y), write(" holds.\n").
+
+shade :-
+    consult("_data/knowledgebase/colortheory.pl"),
+    Y = shade(black, pureshade), write("The result of "), write(Y), write(" holds.\n"), halt.
 ~~~
